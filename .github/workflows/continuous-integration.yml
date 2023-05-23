@@ -55,6 +55,7 @@ jobs:
         with:
           flag-name: run-${{ matrix.os }}-node@${{ matrix.node-version }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          debug: true
           parallel: true
 
   post-test:
@@ -67,6 +68,7 @@ jobs:
       uses: coverallsapp/github-action@f350da2c033043742f89e8c0b7b5145a1616da6d # v2.1.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        debug: true
         parallel-finished: true
 
   test-benchmark:
